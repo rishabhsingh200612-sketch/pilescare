@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Devbhoomee Ayurveda – Piles Diet Chart</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+:root{--dg:#064E25;--pg:#15803D;--hl:#E8F5E9;--gold:#B8860B}
+*{box-sizing:border-box}body{margin:0;font-family:'Noto Sans Devanagari',sans-serif;color:var(--dg);background:linear-gradient(135deg,#E8F5E9,#fff,#E8F5E9)}
+header{background:var(--dg);color:#fff;padding:12px 20px;display:flex;align-items:center;gap:12px}
+header img{height:48px;border-radius:50%;background:#fff}header b{color:#e6c35c;font-size:20px}
+.wrap{max-width:760px;margin:20px auto;padding:0 14px}
+.card{background:rgba(255,255,255,.85);border:1px solid rgba(21,128,61,.25);border-radius:16px;padding:20px;margin-bottom:16px}
+h1{font-size:24px;margin:0 0 6px}label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #9ccfa8;border-radius:10px;font:inherit}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:560px){.g{grid-template-columns:1fr}}
+.chk label{display:inline-block;font-weight:400;margin:4px 12px 4px 0}.chk input{width:auto}
+button,.btn{background:var(--pg);color:#fff;border:0;border-radius:99px;padding:12px 24px;font:inherit;font-weight:600;cursor:pointer;margin:6px 6px 0 0}
+button.gold{background:var(--dg);color:#e6c35c}button.out{background:#fff;color:var(--pg);border:1px solid var(--pg)}
+#chart{width:100%;background:#fff;padding:0;border-radius:10px;overflow:hidden;color:#1f2d24;font-size:13px}
+.ph{background:linear-gradient(120deg,#064E25,#0b6b34);padding:16px 20px;display:flex;align-items:center;gap:14px;border-bottom:4px solid var(--gold)}
+.ph img{height:70px;width:70px;object-fit:cover;border-radius:50%;background:#fff;border:2px solid #e6c35c}
+.ph h2{margin:0;color:#e6c35c;font-size:22px}.ph p{margin:2px 0 0;color:#e8f5e9;font-size:13px}
+.pb{padding:16px 20px}.sec{color:var(--dg);font-size:15px;font-weight:700;margin:14px 0 6px;padding-bottom:3px;border-bottom:2px solid var(--gold)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 14px;background:var(--hl);border-radius:10px;padding:10px 14px}
+.info span{display:block;font-size:11px;color:#4b6b57}.info b{font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border:1px solid #bcd9c4;border-top:4px solid var(--pg);border-radius:10px;padding:10px;text-align:center}
+.stat b{display:block;font-size:20px;color:var(--dg)}.stat span{font-size:11px;color:#4b6b57}
+table{width:100%;border-collapse:collapse;font-size:12.5px}th{background:var(--dg);color:#fff;text-align:left}
+th,td{padding:7px 8px;border:1px solid #cfe3d5;vertical-align:top}tbody tr:nth-child(even){background:#f4faf5}tr{page-break-inside:avoid}
+.st{background:#E8F5E9;border-left:5px solid var(--pg);border-radius:8px;padding:9px 12px;font-size:14px;font-weight:700;margin:10px 0;color:var(--dg)}
+.st.ow{background:#FFF1E6;border-left-color:#c2410c;color:#7c2d12}
+.warn{background:#FFF8E1;border:1px solid var(--gold);border-left:5px solid var(--gold);border-radius:8px;padding:9px 12px;font-size:12px;margin:10px 0}
+.pf{background:var(--dg);color:#e6c35c;text-align:center;font-weight:700;padding:10px;font-size:13px;border-top:3px solid var(--gold)}
+.pf small{display:block;font-weight:400;color:#cfe3d5;font-size:10.5px}
+ul{margin:4px 0;padding-left:20px}li{margin:2px 0}
+@media(max-width:560px){.info,.stats{grid-template-columns:1fr 1fr}}
+.hide{display:none}.err{color:#b91c1c;font-size:14px}
+@media print{header,.noprint{display:none!important}body{background:#fff}.card{border:0;padding:0}}
+</style></head><body>
+<header><img src="logo.jpg" alt="" onerror="this.style.display='none'"><b>Devbhoomee Ayurveda</b></header>
+<div class="wrap">
+<div id="formBox" class="card noprint">
+<h1>पाइल्स (बवासीर) डाइट चार्ट</h1><p style="margin:0 0 8px">अपनी जानकारी भरें और PDF डाउनलोड करें।</p>
+<form id="f">
+<label>पूरा नाम</label><input id="name" required maxlength="60">
+<div class="g"><div><label>उम्र (वर्ष)</label><input id="age" type="number" min="5" max="100" required></div>
+<div><label>लिंग</label><select id="gender"><option>महिला</option><option>पुरुष</option><option>अन्य</option></select></div>
+<div><label>ऊँचाई (cm)</label><input id="h" type="number" min="100" max="220" required></div>
+<div><label>वज़न (kg)</label><input id="w" type="number" min="25" max="250" step="0.1" required></div>
+<div><label>खान-पान</label><select id="diet"><option value="V">शाकाहारी</option><option value="N">मांसाहारी</option><option value="G">वीगन</option></select></div>
+<div><label>समस्या कितने समय से है?</label><select id="dur"><option>1 हफ्ते से कम</option><option>1 हफ्ते – 1 महीना</option><option>1–6 महीने</option><option>6 महीने से ज़्यादा</option></select></div>
+<div><label>उठने का समय</label><input id="wake" type="time" value="07:00"></div>
+<div><label>सोने का समय</label><input id="sleep" type="time" value="22:30"></div></div>
+<label>आपको क्या परेशानी है?</label>
+<div class="chk" id="sym"><label><input type="checkbox" value="कब्ज़"> कब्ज़</label><label><input type="checkbox" value="जलन/खुजली"> जलन / खुजली</label><label><input type="checkbox" value="दर्द"> दर्द</label><label><input type="checkbox" id="bleed" value="खून आना"> मल के साथ खून आना</label></div>
+<label>अन्य मेडिकल समस्या</label>
+<div class="chk" id="conds"><label><input type="checkbox" value="diabetes"> डायबिटीज़</label><label><input type="checkbox" value="kidney"> किडनी/हृदय रोग</label><label><input type="checkbox" value="preg"> गर्भावस्था</label><label><input type="checkbox" value="bf"> स्तनपान</label></div>
+<label>कोई अन्य दवाई ले रहे हैं? (नाम)</label><input id="meds" maxlength="120" placeholder="नहीं तो खाली छोड़ें">
+<label>Devbhoomee औषधि का प्रकार</label><select id="med"><option value="">नहीं चाहिए</option><option value="C">कैप्सूल</option><option value="L">लिक्विड (तरल)</option></select>
+<label class="chk" style="margin-top:14px"><input type="checkbox" id="ok" required> मैं समझती/समझता हूँ कि यह सामान्य आहार मार्गदर्शन है, डॉक्टरी जाँच का विकल्प नहीं।</label>
+<button class="gold" type="submit">Generate My Diet Chart</button></form></div>
+<div id="res" class="hide"><div class="card" style="padding:12px"><div id="chart"></div></div>
+<div class="noprint" id="btns"><button id="dl">Download Diet Chart PDF</button><button class="gold" onclick="print()">Print</button><button class="out" onclick="again()">Generate Again</button></div></div></div>
+<script>
+const $=i=>document.getElementById(i);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const CONTACT="";/* yahan apna phone/WhatsApp likhein */
+/* औषधि की सेवन विधि यहाँ अपने प्रोडक्ट के लेबल के अनुसार बदलें */
+const CAP_USAGE=[["सुबह","खाली पेट","1 कैप्सूल गुनगुने पानी के साथ"],["रात","खाना खाने से आधा घंटा पहले","1 कैप्सूल गुनगुने पानी के साथ"]];
+const LIQ_USAGE=[["उपयोग विधि","","उत्पाद के लेबल पर बताई गई मात्रा और विधि के अनुसार लें"]];
+let LOGO="logo.jpg",fname="Chart";
+const logoReady=fetch("logo.jpg").then(r=>r.blob()).then(b=>new Promise(res=>{const f=new FileReader();f.onload=()=>{LOGO=f.result;res()};f.readAsDataURL(b)})).catch(()=>{});
+$("f").onsubmit=async e=>{e.preventDefault();await logoReady;
+ const age=+$("age").value,h=+$("h").value,w=+$("w").value,d=$("diet").value,name=$("name").value.trim();
+ const sym=[...document.querySelectorAll("#sym input:checked")].map(x=>x.value),bleed=$("bleed").checked;
+ const conds=[...document.querySelectorAll("#conds input:checked")].map(x=>x.value),meds=$("meds").value.trim();
+ const bmi=w/((h/100)**2);
+ const head=`<div class="ph"><img src="${LOGO}" onerror="this.style.display='none'"><div><h2>Devbhoomee Ayurveda</h2><p>पाइल्स (बवासीर) के लिए आहार मार्गदर्शन &nbsp;|&nbsp; दिनांक: ${new Date().toLocaleDateString("en-IN")}</p></div></div>`;
+ const foot=`<div class="pf">Devbhoomee Ayurveda – Ayurveda for a Better You${CONTACT?`<small>${esc(CONTACT)}</small>`:""}</div>`;
+ fname=name.replace(/\s+/g,"_").replace(/[^\w\u0900-\u097F_]/g,"")||"Customer";
+ let block=null;
+ if(age<18)block="18 वर्ष से कम उम्र के लिए यह चार्ट नहीं बनाया जाता। कृपया डॉक्टर से मिलें।";
+ else if(conds.length)block="आपकी बताई गई स्थिति (डायबिटीज़/किडनी-हृदय रोग/गर्भावस्था/स्तनपान) में आहार व पानी की मात्रा डॉक्टर तय करते हैं। कृपया अपने डॉक्टर या डाइटिशियन से व्यक्तिगत चार्ट बनवाएँ।";
+ if(block){$("chart").innerHTML=head+`<div class="pb"><div class="warn">${block}</div></div>`+foot;$("btns").classList.add("hide")}
+ else{
+  $("btns").classList.remove("hide");
+  const nv=d==="N"?"उबला अंडा 1–2 या ग्रिल्ड/उबली मछली-चिकन 80 ग्राम (कम तेल-मसाले में)":"मूंग/मसूर दाल 1 कटोरी, पनीर 50 ग्राम";
+  const meals=[[$("wake").value,"सुबह","गुनगुना पानी 2 गिलास (400 मिली); रात के भीगे 5–6 मुनक्का/किशमिश"],
+   ["+1 घंटा","नाश्ता","सब्ज़ी वाला दलिया 1 कटोरी (150 ग्राम) या चोकर वाली रोटी 2 + सब्ज़ी; साथ में पका पपीता 1 कटोरी"],
+   ["11:00","मध्य-सुबह","अमरूद/सेब (छिलके सहित) 1 या नारियल पानी 1 गिलास"],
+   ["13:30","दोपहर का भोजन","चोकर सहित आटे की रोटी 2–3, दाल 1 कटोरी, हरी सब्ज़ी 1–2 कटोरी (लौकी, तोरई, पालक, परवल), सलाद 1 प्लेट (खीरा, गाजर, चुकंदर), छाछ 1 गिलास"],
+   ["17:00","शाम का स्नैक","भुना चना 1 मुट्ठी या छाछ/नींबू पानी 1 गिलास; मौसमी फल"],
+   ["20:00","रात का भोजन","हल्का: रोटी 2, लौकी/तोरई की सब्ज़ी, मूंग दाल की खिचड़ी या दलिया 1 कटोरी"],
+   [$("sleep").value,"सोने से पहले","गुनगुना पानी 1 गिलास (ज़रूरत हो तो)"]];
+  const mt=$("med").value,mu=mt==="C"?CAP_USAGE:mt==="L"?LIQ_USAGE:null;
+  const medSec=mu?`<div class="sec">Devbhoomee आयुर्वेदिक औषधि – सेवन विधि (${mt==="C"?"कैप्सूल":"लिक्विड"})</div><table><thead><tr><th style="width:20%">समय</th><th style="width:30%">कब</th><th>कैसे लें</th></tr></thead><tbody>${mu.map(x=>`<tr><td><b>${x[0]}</b></td><td>${x[1]||"–"}</td><td>${x[2]}</td></tr>`).join("")}</tbody></table>`:"";
+  $("chart").innerHTML=head+`<div class="pb">
+  <div class="sec" style="margin-top:0">ग्राहक की जानकारी</div>
+  <div class="info"><div><span>नाम</span><b>${esc(name)}</b></div><div><span>उम्र</span><b>${age} वर्ष</b></div><div><span>लिंग</span><b>${$("gender").value}</b></div>
+  <div><span>ऊँचाई / वज़न</span><b>${h} cm / ${w} kg</b></div><div><span>BMI</span><b>${bmi.toFixed(1)}</b></div><div><span>समस्या की अवधि</span><b>${$("dur").value}</b></div></div>
+  ${sym.length?`<p style="margin:8px 0 0"><b>बताई गई परेशानी:</b> ${sym.join(", ")}</p>`:""}
+  ${meds?`<div class="warn">⚠ आप दवाई ले रहे हैं, इसलिए इस चार्ट को शुरू करने से पहले अपने डॉक्टर को दिखाएँ।</div>`:""}
+  <div class="sec">आहार के मुख्य सिद्धांत</div>
+  <div class="stats"><div class="stat"><b>25–30 g</b><span>फाइबर प्रतिदिन (सामान्य लक्ष्य)</span></div><div class="stat"><b>2.5–3 L</b><span>पानी प्रतिदिन</span></div><div class="stat"><b>रोज़</b><span>30 मिनट पैदल चलना</span></div></div>
+  <div class="sec">दैनिक भोजन तालिका</div>
+  <table><thead><tr><th style="width:15%">समय</th><th style="width:18%">भोजन</th><th>क्या खाएँ (मात्रा)</th></tr></thead><tbody>
+  ${meals.map(m=>`<tr><td>${esc(m[0])}</td><td><b>${m[1]}</b></td><td>${m[2]}</td></tr>`).join("")}</tbody></table>
+  ${medSec}
+  <div class="sec">विकल्प</div>
+  <ul><li>प्रोटीन के लिए: ${nv}</li><li>कब्ज़ में: रात को 1 गिलास गुनगुने पानी में इसबगोल 1 चम्मच (5 ग्राम) – डॉक्टर की सलाह से, और साथ में ज़्यादा पानी पिएँ</li><li>सस्ते फाइबर विकल्प: चोकर वाला आटा, दलिया, चना, मौसमी फल और हरी सब्ज़ियाँ</li></ul>
+  <div class="sec">परहेज़ (कम करें / बचें)</div>
+  <ul><li>मैदा, बेकरी, पैकेट वाला और फास्ट फूड</li><li>तला-भुना, ज़्यादा मिर्च-मसाला और अचार</li><li>ज़्यादा चाय-कॉफ़ी, शराब, धूम्रपान</li><li>ज़्यादा लाल मांस और भारी, देर से पचने वाला खाना</li></ul>
+  <div class="sec">जीवनशैली सुझाव</div>
+  <ul><li>शौच की इच्छा को न रोकें और टॉयलेट में ज़ोर न लगाएँ; 5 मिनट से ज़्यादा न बैठें।</li><li>रोज़ एक तय समय पर शौच जाने की आदत बनाएँ।</li><li>लंबे समय तक एक ही जगह न बैठें; हर घंटे थोड़ा चलें।</li><li>गुनगुने पानी में 10–15 मिनट बैठना (सिट्ज़ बाथ) जलन में आराम दे सकता है।</li><li>खाना धीरे-धीरे चबाकर खाएँ और वज़न नियंत्रित रखें।</li></ul>
+  </div>`+foot}
+ $("formBox").classList.add("hide");$("res").classList.remove("hide");scrollTo(0,0)};
+function again(){$("res").classList.add("hide");$("formBox").classList.remove("hide")}
+$("dl").onclick=async()=>{
+ try{await logoReady;scrollTo(0,0);await html2pdf().set({margin:[6,6,6,6],filename:`Devbhoomee_Piles_Diet_Chart_${fname}.pdf`,image:{type:"jpeg",quality:.95},html2canvas:{scale:2,useCORS:true,scrollX:0,scrollY:0,windowWidth:800},jsPDF:{unit:"mm",format:"a4",orientation:"portrait"},pagebreak:{mode:["css","avoid-all"]}}).from($("chart")).save()}
+ catch(e){alert("PDF सीधे डाउनलोड नहीं हो सका। अब Print खुलेगा – उसमें 'Save as PDF' चुनें।");print()}};
+</script></body></html>
